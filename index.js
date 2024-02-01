@@ -74,4 +74,15 @@ const game = () => {
 
 document.querySelector(".button").addEventListener("click", () => {
   game();
+  displayScore();
 });
+
+const container = document.querySelector(".container");
+const score = document.createElement("p");
+score.innerText = `wins : losses : ties = ${wins} : ${losses} : ${ties}`;
+score.setAttribute("style", "font-size: 24px;");
+container.insertBefore(score, document.querySelector(".button"));
+
+function displayScore() {
+  score.innerText = `wins : losses : ties = ${wins} : ${losses} : ${ties}`;
+}
